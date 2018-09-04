@@ -1,0 +1,9 @@
+language: java
+install: true
+cache:
+  directories:
+    - $HOME/.m2
+
+jobs:
+  include:
+    - stage: test
