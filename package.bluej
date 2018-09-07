@@ -2,10 +2,10 @@
 dependency1.from=StarsAndStripesTest
 dependency1.to=StarsAndStripes
 dependency1.type=UsesDependency
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
+editor.fx.0.height=739
+editor.fx.0.width=1025
+editor.fx.0.x=454
+editor.fx.0.y=212
 objectbench.height=99
 objectbench.width=451
 package.divider.horizontal=0.599476439790576

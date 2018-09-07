@@ -84,10 +84,6 @@ public class StarsAndStripesTest
 
     /**
      * Tests printTwoBlankLines().
-     *
-     * Needs improvement.  Only fails if there is non-whitespace present.
-     * I couldn't get it to work comparing \n\n to the output.
-     * --DA 7.21.2018
      */
     @Test
     public void printTwoBlankLinesTest()
@@ -116,13 +112,20 @@ public class StarsAndStripesTest
             startsWithDash = true;
         }
         boolean secondLineStars = false;
-        if( output.charAt( output.indexOf( ls ) + ls.length() ) == '*' )
+        String eol;
+        if( output.indexOf( ls ) == -1 )
+        {
+            eol = "\n";
+        } else {
+            eol = ls;
+        }
+        if( output.charAt( output.indexOf( eol ) + eol.length() ) == '*' )
         {
             secondLineStars = true;
         }
         assertTrue("First line should be dashes: ", startsWithDash);
         assertTrue("Second line should be stars: ", secondLineStars);
-        assertEquals("Output should be 20x6: ", (20*6)+(6*ls.length()), output.length() );
+        assertEquals("Output should be 20x6: ", (20*6)+(6*eol.length()), output.length() );
     }
 
     /**
@@ -143,12 +146,19 @@ public class StarsAndStripesTest
             startsWithDash = true;
         }
         boolean secondLineStars = false;
-        if( output.charAt( output.indexOf( ls ) + ls.length() ) == '*' )
+        String eol;
+        if( output.indexOf( ls ) == -1 )
+        {
+            eol = "\n";
+        } else {
+            eol = ls;
+        }
+        if( output.charAt( output.indexOf( eol ) + eol.length() ) == '*' )
         {
             secondLineStars = true;
         }
         assertTrue("First line should be dashes: ", startsWithDash);
         assertTrue("Second line should be stars: ", secondLineStars);
-        assertEquals("Output should be 20x12: ", (20*12)+(12*ls.length()), output.length() );
+        assertEquals("Output should be 20x12: ", (20*12)+(12*eol.length()), output.length() );
     }
 }
